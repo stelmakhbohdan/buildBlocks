@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BuildBlocksApplication {
 
     public static void main(String[] args) {
+        //not
         SpringApplication.run(BuildBlocksApplication.class, args);
     }
 

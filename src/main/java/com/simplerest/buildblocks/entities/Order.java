@@ -3,6 +3,7 @@ package com.simplerest.buildblocks.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.hateoas.RepresentationModel;
 
 import javax.persistence.*;
 
@@ -10,7 +11,7 @@ import javax.persistence.*;
 @Table(name = "orders")
 @Data
 @NoArgsConstructor
-public class Order {
+public class Order extends RepresentationModel<Order> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

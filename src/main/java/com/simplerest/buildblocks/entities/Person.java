@@ -2,6 +2,7 @@ package com.simplerest.buildblocks.entities;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.hateoas.RepresentationModel;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -12,7 +13,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @Table(name = "persons")
-public class Person {
+public class Person extends RepresentationModel<Person> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

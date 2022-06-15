@@ -1,4 +1,4 @@
-package com.simplerest.buildblocks;
+package com.simplerest.buildblocks.hello;
 
 public class UserDetails {
     private String firstName;

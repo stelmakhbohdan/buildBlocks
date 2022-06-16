@@ -1,5 +1,6 @@
 package com.simplerest.buildblocks.entities;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
@@ -14,8 +15,9 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
-@JsonIgnoreProperties({"firstname","lastname"})
+//@JsonIgnoreProperties({"firstname","lastname"})
 @Table(name = "persons")
+@JsonFilter(value = "userFilter")
 public class Person extends RepresentationModel<Person> {
 
     @Id
@@ -39,7 +41,7 @@ public class Person extends RepresentationModel<Person> {
     @Column(name = "ROLE", length = 50, nullable = false)
     private String role;
 
-    @JsonIgnore
+//    @JsonIgnore
     @Column(name = "SSN", length = 50,nullable = false,unique = true)
     private String ssn;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonView;
+import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.hateoas.RepresentationModel;
@@ -26,12 +27,13 @@ public class Person extends RepresentationModel<Person> {
     @JsonView(Views.External.class)
     private Long id;
 
+    @Size(min = 2,max = 50)
     @NotEmpty(message = "Username is mandatory field.Please provide username")
     @Column(name = "USER_NAME", length = 50, nullable = false, unique = true)
     @JsonView(Views.External.class)
     private String username;
 
-    @Size(min = 2,message = "Firstname should have atleast 2 characters")
+    @Size(min = 2,max = 50,message = "Firstname should have atleast 2 characters")
     @Column(name = "FIRST_NAME", length = 50, nullable = false)
     @JsonView(Views.External.class)
     private String firstname;
